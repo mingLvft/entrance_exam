@@ -9,7 +9,7 @@ class Exam extends Common
         $id = input('get.id');
         $data = db('topic')->field('a.*,b.major')->alias('a')->join('en_major b','a.major_id=b.id')->where('major_id',$id)->select();
         if(empty($data)){
-            $this->error('暂时没有题');
+            $this->error('暂时没有题',url('Index/index'));
         }
         $this->assign('data',$data);
         return $this->fetch();
@@ -55,7 +55,7 @@ class Exam extends Common
         $id = input('get.id');
         $data = db('topic')->field('a.*,b.major')->alias('a')->join('en_major b','a.major_id=b.id')->where('major_id',$id)->select();
         if(empty($data)){
-            $this->error('暂时没有题');
+            $this->error('暂时没有题',url('Index/index'));
         }
         $this->assign('data',$data);
         return $this->fetch();
