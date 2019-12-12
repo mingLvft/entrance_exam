@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>测试结果</title>
+<link href="__STATIC__/index/css/ceshi.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+
+#result{
+	width:1440px;
+	height:2030px;
+	background:url(__STATIC__/index/images/result.jpg) no-repeat;
+	margin:20px auto;}
+#container1{
+	padding:400px 0 0 0;}
+
+h1{
+	color:#B00;
+	font-size:2.2em;
+	text-align:center;
+	padding:30px 0;
+	}
+.waizhuan{
+	padding:30px 0 60px 0;}
+span{
+	color:#000;
+	padding:0 40px;
+	font-size:1.2em;
+	border-bottom:3px solid #000;}
+h2{
+	color:#111;
+	text-align:center;
+	padding:20px 0;
+	font-size:1.8em;
+	}
+h2 span{
+	color:#B00;
+	font-size:1.5em;
+	}
+.mubiao{
+	color:#b00;
+	text-align:left;
+	padding:0 0 0 280px;}
+p{
+	line-height:180%;
+	padding:20px 300px;
+	font-size:1.8em;}
+.waizhuanye{
+	padding:20px 200px;}
+
+#foot{
+	text-align:center;}
+#foot img{
+	margin-left:30px;}
+</style>
+
+</head>
+
+<body>
+<div id="result">
+    <div id="container1">
+        <h1><span>{$name}</span>同学，恭喜你通过了<span>{$major}</span>的专业测试！</h1>
+
+		<h2>经测试，你的学习类型为<span id="xing"></span>，专业匹配度<span>{$score}%</span></h2>
+        <p>{$evaluate}</p>
+
+        {volist name="grade" id="vo"}
+        {if condition="$major == $vo.major"}
+         <h2 class="mubiao">{$major}专业要求：</h2>
+        <p>{$vo.content}</p>
+        {/if}
+        {/volist}
+        <h2 class="mubiao">努力就有收获，人人都能成功！</h2>
+    </div>
+</div>
+<script type="text/javascript">
+function num(){
+    var arr = ['能力型','事业型','完美型','潇洒型'];
+  var number = arr.sort(function() {
+       return (0.5-Math.random());
+  });
+  return  number[0];
+}
+var xing = document.getElementById('xing');
+var zhi = num();
+xing.innerHTML = zhi;
+</script>
+</body>
+</html>

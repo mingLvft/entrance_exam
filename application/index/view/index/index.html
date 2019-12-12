@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>四川新华电脑学院新生入学测试系统V4.0版本</title>
+<link rel="stylesheet" type="text/css" href="__STATIC__/index/css/index.css" />
+<script src="__STATIC__/index/js/modernizr.custom.js"></script>
+</head>
+<body>
+<div id="main">
+	<div id="logo">
+    	<img src="__STATIC__/index/images/logo_yuan.png" width="703" height="80" />
+    </div>
+    <div id="container">
+        <ul class="grid">
+            {volist name="data" id="vo"}
+            <li class="cs-style-3">
+            <figure>
+                <div><img src="/entrance_exam/{$vo.major_img}" alt="img01"></div>
+                <figcaption>
+                <h3>{$vo.major}</h3>
+                <a href="{:url('Exam/index')}?id={$vo.id}">点击测试</a>
+                </figcaption>
+            </figure>
+            </li>
+            {/volist}
+        </ul>
+    </div>
+    <div id="footer">
+    	<p>四川新华电脑学院EBOSS高级电子商务专业开发维护</p>
+        <p>联系方式 QQ：2654696 陈雪冬老师</p>
+    </div>
+</div>
+
+</body>
+</html>

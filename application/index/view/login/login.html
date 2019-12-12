@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>登录</title>
+<style type="text/css">
+body,div,form,input,img,p{
+	margin:0;
+	padding:0;}
+body{
+	background-color:#000;}
+body,td,th{
+	font-family:"微软雅黑";
+	font-size:18px;
+	color:#333;}
+#main{
+	width:900px;
+	margin:0 auto;}
+#header{
+	background:url(__STATIC__/index/images/headpic.png) no-repeat;
+	width:900px;
+	height:339px;
+	}
+#container{
+	background-color:#eee;}
+#left{
+	width:300px;
+	padding:20px 60px;
+	text-align:center;
+	float:left;
+	}
+#left img{
+	padding:20px 0;}
+#right{
+	float:left;
+	padding:40px 40px 20px 0px;}
+#right span{
+	display:block;
+	padding:10px;}
+#username,#qq,#tel,#btn_login{
+	width:300px;
+	padding:15px 20px;
+	font-size:18px;
+	color:#333;
+	font-family:"微软雅黑";
+	font-weight:bold;
+	border:3px solid #bbb;
+	background-color:#ddd;
+	}
+#username:hover,#qq:hover,#tel:hover{
+	background-color:#FF9;}
+input#btn_login{
+	width:340px;
+	background-color:#EBC407;
+	border:3px solid #DFAA09;
+	letter-spacing:20px;
+	padding:15px 0 15px 20px;	
+	cursor:pointer;
+	opacity:0.7;
+	}
+input#btn_login:hover{
+	opacity:1;}
+.juzhong{
+	text-align:center;}
+.cl{
+	clear:both;}
+#footer{
+	height:70px;
+	background-color:#CCC;
+	border-bottom-left-radius:50px;
+	border-bottom-right-radius:50px;}
+#shadow{
+	background:url(__STATIC__/index/images/shadow.png) no-repeat;
+	width:1236px;
+	height:113px;
+	margin:20px auto;}
+</style>
+</head>
+
+<body>
+<div id="main">
+	<div id="header">
+    
+    </div>
+    <div id="container">
+    	<div id="left">
+        	<img src="__STATIC__/index/images/scxhlogo.png" width="291" height="56" />
+            <img src="__STATIC__/index/images/touxiang.jpg" width="217" height="217" />
+        </div>
+        <div id="right">
+        	<form name="login" method="post" action="" onsubmit="return check();">
+            	<span><input type="text" name="name" value="请输入你的姓名(必填)" id="username" onfocus="this.value='';" /></span>
+                <span><input type="text" name="qq" value="请输入你的QQ(可填)" id="qq" onfocus="this.value='';" /></span>
+                <span><input type="text" name="tel" value="请输入你的电话号码(可填)" id="tel" onfocus="this.value='';" /></span>
+                <span class="juzhong"><input type="submit" id="btn_login" /></span>
+            </form>
+        </div>
+        <div class="cl"></div>
+    </div>
+    <div id="footer"></div>
+</div>
+<div id="shadow"></div>
+<script language="javascript" type="text/javascript">
+function check(){
+var username=document.login.nicheng.value;
+alert(username);
+if(username==""||username=="请输入你的姓名(必填)"){
+	alert("姓名不能为空！");
+	return false;
+	}
+else{
+	alert("登录成功！四川新华电脑学院欢迎你！")
+	return true;
+	}
+
+}
+</script>
+</body>
+</html>

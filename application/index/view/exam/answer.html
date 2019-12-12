@@ -1,0 +1,84 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>$data.0.major}专业测试</title>
+
+<link href="__STATIC__/index/css/ceshi.css" rel="stylesheet" type="text/css" />
+<link href="__STATIC__/index/css/top.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="__STATIC__/index/js/jquery.js"></script>
+<script type="text/javascript" src="__STATIC__/index/js/top.js"></script>
+<!--<script type="text/javascript" src="__STATIC__/index/js/comm.js"></script>-->
+</head>
+
+<body>
+<!-- 代码 开始 -->
+<div style="display:none;" id="rocket-to-top">
+	<div style="opacity:0;display:block;" class="level-2"></div>
+	<div class="level-3"></div>
+</div>
+<div id="back">
+	<a href="{:url('Index/index')}" title="返回首页" id="sethome"></a>
+    <a href="{:url('Exam/answer')}" title="正确答案" id="answer" target="_blank"></a>
+</div>
+<!-- 代码 结束 -->
+
+<div id="main">
+    <div id="design"></div>
+    <div id="container">
+      <form action="{:url('Exam/submit')}" method="post" name="test" target="_blank">
+        <table width="700" border="0" cellspacing="0" cellpadding="0">
+          {volist name="data" id="vo"}
+          <tr >
+            <td class="title">{$i}.{$vo.topic}
+            <p>
+                {notempty name="$vo.topic_img"}
+                <img src="/entrance_exam/{$vo.topic_img}" alt="" width="467" height="102" /><br />
+                {/notempty}
+            </p>
+            <span style="color: red">正确答案：{$vo.right_key}</span>
+            </td>
+          </tr>
+          <tr>
+            <td><label>
+              A.  <input name="{$vo.id}" type="radio" value="A" {eq name="$vo.A" value="$vo.right_key"}checked="checked"{/eq}/>
+            </label>
+              {$vo.A}</td>
+          </tr>
+          <tr>
+            <td><label>
+              B.  <input name="{$vo.id}" type="radio" value="B" />
+            </label>
+              {$vo.B}</td>
+          </tr>
+          <tr>
+            {neq name="$vo.C" value="无"}
+            <td><label>
+              C.  <input name="{$vo.id}" type="radio" value="C"/>
+            </label>
+             {$vo.C}</td>
+            {/neq}
+          </tr>
+          <tr>
+            {neq name="$vo.D" value="无"}
+            <td><label>
+              D.  <input name="{$vo.id}" type="radio" value="D"/>
+            </label>
+              {$vo.D}
+            </td>
+            {/neq}
+          </tr>
+          {/volist}
+          <tr>
+            <td id="last"><div id="button">
+                <input type="submit" class="btn_car_10" id="btn_design"/>
+              <input name="major_id" type="hidden" value="{$data.0.major_id}" />
+<!--              <input name="lujing" type="hidden" value="" />-->
+            </div></td>
+          </tr>
+        </table>
+      </form>
+    </div>
+</div>
+</body>
+</html>
